@@ -1,32 +1,21 @@
 using System;
 
-class AddTwoDigits
-{
-    int num1;
-    int num2;
-    int result;
-
-    // Constructor
-    public AddTwoDigits(int n1, int n2)
-    {
-        num1 = n1;
-        num2 = n2;
-        result = num1 + num2;
-    }
-
-    public void PrintResult()
-    {
-        Console.WriteLine("The sum of {0} and {1} is {2}", num1, num2, result);
-    }
-}
+delegate int AddDelegate(int a, int b);
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        AddTwoDigits adder = new AddTwoDigits(7, 5);
+        AddDelegate addDelegate = new AddDelegate(AddNumbers);
 
-        adder.PrintResult();
+        int sum = addDelegate(3, 4);
+
+        Console.WriteLine("The sum of 3 and 4 is: " + sum);
         Console.ReadLine();
+    }
+
+    static int AddNumbers(int a, int b)
+    {
+        return a + b;
     }
 }
