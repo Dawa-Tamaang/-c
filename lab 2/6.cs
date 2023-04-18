@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> names = new List<string>() { "Sherap", "Saraswoti", "Pasang", "Abhinash", "Dawa" };
+        List<string> names = new List<string>() { "Ram", "Shyam", "Hari", "Bikash", "Mahesh" };
 
         var sortedNames = from name in names
             orderby name
